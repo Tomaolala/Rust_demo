@@ -14,14 +14,17 @@ fn main() {
         let guess: u32 =match guess.trim().parse(){
             Ok(num)=>num,
             Err(_)=>{
-                println!("请输入数字");
+                println!("请输入数字"); 
                 continue;
             }
         };
         match guess.cmp(&scret_number) {
             Ordering::Less => println!("Too small"),
             Ordering::Greater => println!("TOO big"),
-            Ordering::Equal => println!("Equal"),
+            Ordering::Equal => {
+                println!("You win");
+                break;
+            }
         }
     }
 
